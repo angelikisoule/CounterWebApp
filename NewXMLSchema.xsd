@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.w3.org/2005/Atom">
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="type" type="xs:string"/>
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="link">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="rel" use="optional"/>
+          <xs:attribute type="xs:string" name="href" use="optional"/>
+          <xs:attribute type="xs:string" name="comment" use="optional"/>
+          <xs:attribute type="xs:string" name="type" use="optional"/>
+          <xs:attribute type="xs:string" name="title" use="optional"/>
+          <xs:attribute type="xs:string" name="credits" use="optional"/>
+          <xs:attribute type="xs:string" name="caption" use="optional"/>
+          <xs:attribute type="xs:string" name="code" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="category">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="term" use="optional"/>
+          <xs:attribute type="xs:string" name="label" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="author">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:atom="http://www.w3.org/2005/Atom" ref="atom:name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="id" type="xs:string"/>
+  <xs:element name="updated" type="xs:string"/>
+  <xs:element name="published" type="xs:string"/>
+  <xs:element name="summary" type="xs:string"/>
+  <xs:element name="subtitle" type="xs:string"/>
+  <xs:element name="entry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:atom="http://www.w3.org/2005/Atom" ref="atom:type"/>
+        <xs:element xmlns:atom="http://www.w3.org/2005/Atom" ref="atom:title"/>
+        <xs:element xmlns:atom="http://www.w3.org/2005/Atom" ref="atom:link" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element xmlns:atom="http://www.w3.org/2005/Atom" ref="atom:category" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element xmlns:atom="http://www.w3.org/2005/Atom" ref="atom:author"/>
+        <xs:element xmlns:atom="http://www.w3.org/2005/Atom" ref="atom:id"/>
+        <xs:element xmlns:atom="http://www.w3.org/2005/Atom" ref="atom:updated"/>
+        <xs:element xmlns:atom="http://www.w3.org/2005/Atom" ref="atom:published"/>
+        <xs:element xmlns:atom="http://www.w3.org/2005/Atom" ref="atom:summary"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="feed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:atom="http://www.w3.org/2005/Atom" ref="atom:title"/>
+        <xs:element xmlns:atom="http://www.w3.org/2005/Atom" ref="atom:link"/>
+        <xs:element xmlns:atom="http://www.w3.org/2005/Atom" ref="atom:subtitle"/>
+        <xs:element xmlns:atom="http://www.w3.org/2005/Atom" ref="atom:updated"/>
+        <xs:element xmlns:atom="http://www.w3.org/2005/Atom" ref="atom:entry"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

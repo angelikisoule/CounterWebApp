@@ -1,0 +1,10 @@
+gr/soule/mavenbook/springwebpp/article/Category.class
+gr/soule/mavenbook/springwebpp/article/Entry.class
+gr/soule/mavenbook/springwebpp/article/Author.class
+gr/soule/mavenbook/springwebpp/article/ObjectFactory.class
+gr/soule/mavenbook/springwebpp/article/Link.class
+gr/soule/mavenbook/springwebpp/article/Feed.class
+gr/soule/mavenbook/springwebpp/article/package-info.class
+gr/soule/mavenbook/springwebpp/article/Article.class
+gr/soule/mavenbook/springwebpp/controller/BaseController.class
+gr/soule/mavenbook/springwebpp/parser/ArticleParser.class
